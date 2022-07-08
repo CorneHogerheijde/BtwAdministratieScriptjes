@@ -19,13 +19,15 @@ Google Apps Scripts for use together with Google Document AI for automating your
 2. Create a new project at https://script.google.com
 3. Add the 3 script files from this repo
 4. Create a new project at https://console.cloud.google.com/ and set up Document AI API
-  - Follow instructions here: https://cloud.google.com/document-ai/docs/setup?hl=en
-  - Follow the instructions to create a service account and download the private key file
+    - Follow instructions here: https://cloud.google.com/document-ai/docs/setup?hl=en
+    - Follow the instructions to create a service account and download the private key file
 5. Download the private key, and fill all the variables in docAPI.gs script (TODO: improve!)
 6. Follow instructions here to create a processor: https://cloud.google.com/document-ai/docs/create-processor
-  - Use "Invoice Parser"
+    - Use "Invoice Parser"
 7. Ensure the correct base folder is set in runOcrDocumentAIApi.gs script
 8. Run the script!
 
 
 **Please update this steps when any problems found. Especially authorization of the service account didn't work immediately for me.**
+
+And of course, custimize the createSheet.gs as you wish! (Currently this script outputs a template I use for copy/paste)
