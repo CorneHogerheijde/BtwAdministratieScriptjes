@@ -1,5 +1,5 @@
 # VATAdministrationScripts
-Google Apps Scripts for use together with Google Document AI for automating your VAT/Tax administration. Since this is a small hobby project without any significant time investment this is probably 'bad' code and can be improved a lot. So; please do so and let me know! 
+Google Apps Scripts for use together with Google Document AI for automating your VAT/Tax administration. Since this is a small hobby project without any significant time investment (free afternoon work) this is probably 'bad' code and can be improved a lot. So; please do so and let me know! 
 
 ## TODO: Add scripts to match bank account export data
 
