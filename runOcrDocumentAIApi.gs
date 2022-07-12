@@ -118,3 +118,15 @@ function processResponse(response, image) {
   
   return result;
 }
+
+function getDriveFolderFromPath (path) {
+  return (path || "/").split("/").reduce ( function(prev,current) {
+    if (prev && current) {
+      var fldrs = prev.getFoldersByName(current);
+      return fldrs.hasNext() ? fldrs.next() : null;
+    }
+    else {
+      return current ? null : prev;
+    }
+  },DriveApp.getRootFolder());
+}
