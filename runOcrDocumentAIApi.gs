@@ -27,12 +27,24 @@ function getFileInformations (folder, mimeType) {
 
     Logger.log("Name: " + image.getName());
 
-    var docBytes = Utilities.base64Encode(image.getBlob().getBytes());
-    var response = processDocument(docBytes, mimeType);
-    var result = processResponse(response, image);
+    try{
+      var docBytes = Utilities.base64Encode(image.getBlob().getBytes());
+      var response = processDocument(docBytes, mimeType);
+      var result = processResponse(response, image);
 
-    Logger.log(result);
-    results.push(result);
+      Logger.log(result);
+      results.push(result);
+    } catch(ex) {
+      Logger.log(ex);
+      results.push({
+        btw_percentage: null,
+        btw_totaal: null,
+        totaalprijs: null,
+        nettoprijs: null,
+        datum: null,
+        image: image
+      });
+    }
   }
     
   return results;
