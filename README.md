@@ -18,6 +18,8 @@ Google Apps Scripts for use together with Google Document AI for automating your
 1. Upload your administration (pdf/jpg/...) to a Google Drive folder. This can be any invoice document containing a total price, VAT and/or net price, or just a photo from the receipt.
 2. Create a new project at https://script.google.com
 3. Add the 3 script files from this repo
+    - Ensure to add OAuth2 v41 as library
+    - Ensure to add Drive v2 as service
 4. Create a new project at https://console.cloud.google.com/ and set up Document AI API
     - Follow instructions here: https://cloud.google.com/document-ai/docs/setup?hl=en
     - Follow the instructions to create a service account and download the private key file
