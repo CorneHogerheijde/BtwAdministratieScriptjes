@@ -20,6 +20,7 @@ Google Apps Scripts for use together with Google Document AI for automating your
 3. Add the 3 script files from this repo
     - Ensure to add OAuth2 v41 as library
     - Ensure to add Drive v2 as service
+    - [Or add appsscript.json => you can also choose just to compare]
 4. Create a new project at https://console.cloud.google.com/ and set up Document AI API
     - Follow instructions here: https://cloud.google.com/document-ai/docs/setup?hl=en
     - Follow the instructions to create a service account and download the private key file
