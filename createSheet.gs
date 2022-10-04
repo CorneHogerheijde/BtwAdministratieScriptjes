@@ -2,7 +2,7 @@ function createSheet(folderBase, quarter, results) {
   //Set up spreadsheet
   var sheetFolder = getDriveFolderFromPath(folderBase);
   var resource = {
-    title: `${quarter} - btw-results (${new Date().getMonth()+1})`,
+    title: `${quarter} - btw-results (${new Date().getMonth()+1}).xlsx`,
     mimeType: MimeType.GOOGLE_SHEETS,
     parents: [{ id: sheetFolder.getId() }]
   }
