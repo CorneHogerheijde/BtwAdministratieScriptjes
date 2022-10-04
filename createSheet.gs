@@ -47,7 +47,7 @@ function createSheet(folderBase, quarter, results) {
 
   // Add empty formula row
   var row=sheet.getLastRow()+1;
-  sheet.appendRow(["","Lege formules.","","totaal?","",`=D${row}*(IF(E${row}=21%;21;9)/(IF(E${row}=21%;21;9)+100 ))`,`=D${row}-E${row}`,"",""]);
+  sheet.appendRow(["","Lege formules.","","totaal?","",`=D${row}*(IF(E${row}=21%;21;9)/(IF(E${row}=21%;21;9)+100 ))`,`=D${row}-F${row}`,"",""]);
 
 }
 
