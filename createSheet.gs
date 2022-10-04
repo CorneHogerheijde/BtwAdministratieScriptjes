@@ -25,10 +25,11 @@ function createSheet(folderBase, quarter, results) {
     var filelink = `=HYPERLINK("${quarter}\\${filename}"; "${filename}")`; // foldername\filename.ext
 
     // fix btw_percentage
-    if(result.btw_percentage != "21" && result.btw_percentage != "9" && result.btw_percentage != "0"){
+    result.btw_percentage = result.btw_percentage ? result.btw_percentage.replace(".", ",") : "";
+    if(result.btw_percentage != "21" && result.btw_percentage != "9" && result.btw_percentage != "0" && result.btw_percentage != "9,00" && result.btw_percentage != "21,00"){
       result.btw_percentage = "21%"; // just guess
     } else if(result.btw_percentage) {
-      result.btw_percentage = result.btw_percentage + "%"
+      result.btw_percentage = result.btw_percentage.replace(",00", "") + "%"
     }
 
     var row=sheet.getLastRow()+1;
