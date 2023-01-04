@@ -1,10 +1,17 @@
 function runOcrDocumentAIApi() {
   var now = new Date();
   
-  var folderBase = "##YOUR BASE FOLDER HERE!##" // Format e.g.: Administration/Invoices
-  
-  var quarter = `${now.getFullYear()} - Q${Math.floor(now.getMonth() / 3)}`
-  var folderName = `${folderBase}/${quarter}`;
+  var folderBase = "Corne/ZZP/Facturen";
+
+  var quarter = Math.floor(now.getMonth() / 3);
+  var year = now.getFullYear();
+
+  if(quarter == 0.0) {
+    year = year - 1;
+    quarter = 4;
+  }
+  var folderName = `${folderBase}/${year} - Q${quarter}`;
+  Logger.log(folderName);
   var folder = getDriveFolderFromPath(folderName);
 
   var pdfResults = getFileInformations (folder, "application/pdf");
