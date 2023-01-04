@@ -10,7 +10,8 @@ function runOcrDocumentAIApi() {
     year = year - 1;
     quarter = 4;
   }
-  var folderName = `${folderBase}/${year} - Q${quarter}`;
+  var quartername = `${year} - Q${quarter}`;
+  var folderName = `${folderBase}/${quartername}`;
   Logger.log(folderName);
   var folder = getDriveFolderFromPath(folderName);
 
@@ -19,7 +20,7 @@ function runOcrDocumentAIApi() {
 
   var results = pdfResults.concat(jpgResults); //.sort((a,b) => isNaN(Date.parse(a)) || isNaN(Date.parse(b)) ? -1 : new Date(a) - new Date(b));
 
-  createSheet(folderBase, quarter, results);
+  createSheet(folderBase, quartername, results);
   Logger.log("Finished!");
 }
 
