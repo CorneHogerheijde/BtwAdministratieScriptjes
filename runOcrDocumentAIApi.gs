@@ -24,28 +24,19 @@ function runOcrDocumentAIApi() {
   Logger.log("Finished!");
 }
 
-function runOcrDocumentAIFullYear() {
-  var now = new Date();
-  
+function runOcrCustomQuarter() {
   var folderBase = "Corne/ZZP/Facturen";
 
-  var year = "2022";
-  var results = [];
+  var quartername = `2022 - Q3`;
+  var folderName = `${folderBase}/${quartername}`;
+  Logger.log(folderName);
+  var folder = getDriveFolderFromPath(folderName);
 
-  for(var i = 1; i < 5; i++)
-  {
-    var quartername = `${year} - Q${i}`;
-    var folderName = `${folderBase}/${quartername}`;
-    Logger.log(folderName);
-    var folder = getDriveFolderFromPath(folderName);
+  var pdfResults = getFileInformations (folder, "application/pdf");
+  var jpgResults = getFileInformations (folder, "image/jpeg");
 
-    var pdfResults = getFileInformations (folder, "application/pdf");
-    var jpgResults = getFileInformations (folder, "image/jpeg");
-
-    results.push(pdfResults.concat(jpgResults));
-  }
-
-  createSheet(folderBase, year, results);
+  var results = pdfResults.concat(jpgResults);
+  createSheet(folderBase, `custom - ${quartername}`, results);
   Logger.log("Finished!");
 }
 
