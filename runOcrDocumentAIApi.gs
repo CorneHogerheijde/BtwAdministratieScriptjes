@@ -24,6 +24,31 @@ function runOcrDocumentAIApi() {
   Logger.log("Finished!");
 }
 
+function runOcrDocumentAIFullYear() {
+  var now = new Date();
+  
+  var folderBase = "Corne/ZZP/Facturen";
+
+  var year = "2022";
+  var results = [];
+
+  for(var i = 1; i < 5; i++)
+  {
+    var quartername = `${year} - Q${i}`;
+    var folderName = `${folderBase}/${quartername}`;
+    Logger.log(folderName);
+    var folder = getDriveFolderFromPath(folderName);
+
+    var pdfResults = getFileInformations (folder, "application/pdf");
+    var jpgResults = getFileInformations (folder, "image/jpeg");
+
+    results.push(pdfResults.concat(jpgResults));
+  }
+
+  createSheet(folderBase, year, results);
+  Logger.log("Finished!");
+}
+
 function getFileInformations (folder, mimeType) {
   var results = [];
   //Find all images in folder
